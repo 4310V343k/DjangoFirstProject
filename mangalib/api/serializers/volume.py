@@ -1,9 +1,12 @@
 from rest_framework import serializers
+from rest_framework.serializers import HyperlinkedModelSerializer
 
 from ..models import Volume
 
 
-class VolumeSerializer(serializers.ModelSerializer):
+class VolumeSerializer(HyperlinkedModelSerializer):
+    title_url = serializers.HyperlinkedRelatedField(view_name='title-details', read_only=True)
+
     class Meta:
         model = Volume
-        fields = ['title', 'name', 'cost', 'position', 'chapters']
+        fields = ['url', 'title_url', 'name', 'cost', 'position', 'chapters']

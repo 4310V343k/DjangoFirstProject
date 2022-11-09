@@ -48,7 +48,7 @@ API Examples
 
 **Get your newly created Title**
 
-    http :8000/api/titles/6/
+    http :8000/api/titles/1/
 
 Django Admin
 ------------

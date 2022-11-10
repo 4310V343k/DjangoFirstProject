@@ -5,8 +5,6 @@ from ..models import Volume
 
 
 class VolumeSerializer(HyperlinkedModelSerializer):
-    title_url = serializers.HyperlinkedRelatedField(view_name='title-details', read_only=True)
-
     class Meta:
         model = Volume
-        fields = ['url', 'title_url', 'name', 'cost', 'position', 'chapters']
+        fields = ['url', 'title', 'name', 'cost', 'position', 'chapters']
